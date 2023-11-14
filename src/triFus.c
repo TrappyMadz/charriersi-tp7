@@ -31,6 +31,12 @@ int* copierSousTableau(int* src, int debut,int fin)
 
     // On alloue la mémoire necéssaire
     dest = malloc(int_taille * sizeof(int));
+
+    // Pour i allant du début à la fin, on associe l'élément i de src à l'élement suivant de dest
+    for (int_i = 0 ; int_i <= int_taille ; int_i++)
+    {
+        dest[int_i] = src[int_i+debut];
+    }
     
     // On renvoie le tableau dest
     return dest;
