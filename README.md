@@ -1,19 +1,19 @@
-# charriersi-tpX
-CY-Tech ING1 Programmation procédurale TPX
+# charriersi-tp7
+CY-Tech ING1 Programmation procédurale TP7
 
 ## Compilation du code
 
-Pour compiler le code, il faut ouvrir un terminal dans le dossier "charriersi-tpX" puis entrer la commande suivante :
+Pour compiler le code, il faut ouvrir un terminal dans le dossier "charriersi-tp7" puis entrer la commande suivante :
 
 ```bash
 make
 ```
 
-Deux fichiers seront créés dans le répertoire bin: charriersi-tp7.out et main.o
+Les fichiers .o et les executables se trouveront dans le dossier bin
 
 ## Execution du programme
 
-Pour executer le programme, toujours dans le terminal se trouvant dans le dossier "charriersi-tp7a", il faut entrer la commande :
+Pour executer le programme, toujours dans le terminal se trouvant dans le dossier "charriersi-tp7", il faut entrer la commande :
 
 ```bash
 make exe
