@@ -3,7 +3,7 @@
 # Définition des variables :
 
 # Numéro du tp, utile pour les noms de certains fichiers
-NUM_TP := X
+NUM_TP := 7
 
 # Répertoires
 REP_SRC := src
@@ -35,8 +35,6 @@ DOXYFILE := Doxyfile
 
 # Cible all
 all: $(CHE_EXE)
-	rm -f $(REP_EXE)/*.o $(CHE_EXE) $(REP_SRC)/$(SUPPR)
-
 
 # Règle de compilation
 $(CHE_EXE): $(OBJ)
