@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 #include "utiles.h"
-#include "tris.h"
+#include "triInsert.h"
 
 /*!
 \fn int main (int argc, char** argv)

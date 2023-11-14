@@ -8,7 +8,6 @@
 
 // Inclusions
 #include "triInsert.h"
-#include "utiles.h"
 
 void triInsert (int* pint_tab, int int_taille)
 {
