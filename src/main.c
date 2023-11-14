@@ -11,6 +11,7 @@
 
 #include "utiles.h"
 #include "triInsert.h"
+#include "triFus.h"
 
 /*!
 \fn int main (int argc, char** argv)
@@ -25,11 +26,13 @@
 int main(int argc, char ** argv) 
 {
 	int* pint_tab;
+    int* pint_tab2;
 
-    pint_tab=eTab(3);
-	afftab(pint_tab, 3);
-    triInsert(pint_tab, 3);
-    afftab(pint_tab,3);
+    pint_tab=eTab(4);
+	afftab(pint_tab, 4);
+    pint_tab2=copierSousTableau(pint_tab,1,2);
+    afftab(pint_tab2,2);
     free(pint_tab);
+    free(pint_tab2);
 	return (0);
 }
