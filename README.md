@@ -1,4 +1,4 @@
-# charriersi-tp7
+# BITE
 CY-Tech ING1 Programmation procédurale TP7
 
 ## Compilation du code
