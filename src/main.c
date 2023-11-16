@@ -13,6 +13,7 @@
 #include "utiles.h"
 #include "triInsert.h"
 #include "triFus.h"
+#include "triDen.h"
 
 // Définitions
 #define ERREUR -1
@@ -30,14 +31,16 @@
 int main(int argc, char ** argv) 
 {
 	int* pint_tab;
+    int min;
+    int max;
 
-    printf("Premier tableau :\n");
     pint_tab=eTab(4);
-    printf("Affichage du premier tableau :\n");
-	afftab(pint_tab, 4);
+    afftab(pint_tab, 4);
 
-    triFusion(pint_tab,4);
-    afftab(pint_tab,4);
+    minMaxTableau(pint_tab, 4, &min, &max);
+
+    printf("Min : %d et Max : %d\n", min, max);
+
     
     free(pint_tab);
 	return (0);
