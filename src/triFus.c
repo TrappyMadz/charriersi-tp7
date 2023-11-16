@@ -88,20 +88,51 @@ void fusion (int* tab1, int taille1, int* tab2, int taille2, int* tabRes)
 
 void triFusion(int* tab, int taille)
 {
-    // On verifie que le tableau à plus d'un élément (sinon déjà trié)
+    // Déclaration des variables
+    // Variable contenant l'indice du centre d'un tableau
+    int int_milieu;
+    // Sous-tableaux
+    int* pint_sousTableau1;
+    int* pint_sousTableau2;
 
+    // On verifie que le tableau à plus d'un élément (sinon déjà trié)
+    if (taille > 1)
+    {
         // On calcule l'indice du milieu du tableau pour le couper en 2
+        int_milieu = taille /2;
 
         // On alloue l'espace nécessaire au 2 tableaux
         // Le sous tableau 1 sera composé des éléments de 0 à milieu
+        pint_sousTableau1 = malloc(int_milieu * sizeof(int));
+        if (pint_sousTableau1 == NULL)
+        {
+            fprintf(stderr,"Erreur d'allocation\n");
+            exit(ERREUR);
+        }
+
         // Le sous tableau 2 aura le reste des éléments
+        pint_sousTableau2 = malloc((taille - int_milieu) * sizeof(int));
+        if (pint_sousTableau2 == NULL)
+        {
+            free(pint_sousTableau1);
+            fprintf(stderr,"Erreur d'allocation\n");
+            exit(ERREUR);
+        }
 
         // On utilise la fonction copierSousTableau pour couper le tableau en 2
+        pint_sousTableau1 = copierSousTableau(tab,0 , int_milieu - 1);
+        pint_sousTableau2 = copierSousTableau(tab, int_milieu, taille - 1);
 
         // On appel enfin triFusion récursivement avec les 2 sous tableaux.
+        triFusion(pint_sousTableau1,int_milieu);
+        triFusion(pint_sousTableau2,taille - int_milieu);
 
         // Une fois le tri fait, on fusionne les sous tableaux
+        fusion(pint_sousTableau1, int_milieu, pint_sousTableau2, taille - int_milieu, tab);
 
         // On libère la mémoire prise par les sous tableaux
+        free(pint_sousTableau1);
+        free(pint_sousTableau2);
+    }
 }
 

@@ -30,35 +30,15 @@
 int main(int argc, char ** argv) 
 {
 	int* pint_tab;
-    int* pint_tab2;
-    int* tabRes;
 
     printf("Premier tableau :\n");
     pint_tab=eTab(4);
-    printf("Second tableau : \n");
-    pint_tab2=eTab(4);
     printf("Affichage du premier tableau :\n");
 	afftab(pint_tab, 4);
-    printf("Affichage du second tableau :\n");
-    afftab(pint_tab2,4);
 
-    tabRes = malloc(8 * sizeof(int));
-    if (tabRes == NULL)
-    {
-        fprintf(stderr,"Erreur d'allocation\n");
-        exit(ERREUR);
-    }
+    triFusion(pint_tab,4);
+    afftab(pint_tab,4);
     
-    printf("Fusion...\n");
-    fusion(pint_tab, 4, pint_tab2, 4, tabRes);
-
-    printf("Affichage du tableau fusionner :\n");
-    afftab(tabRes,8);
-
-    
-
     free(pint_tab);
-    free(pint_tab2);
-    free(tabRes);
 	return (0);
 }
