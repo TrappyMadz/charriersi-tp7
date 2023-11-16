@@ -48,4 +48,5 @@ void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
 
         // On vérifie si l'index calculer est valide, cad si il appartient au tableau
             // Si c'est le cas, on incrémente la valeurs de 1 à cette index du tableau
+            
 }
