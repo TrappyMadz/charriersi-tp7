@@ -38,3 +38,14 @@ void minMaxTableau (int* tab, int taille, int* min, int* max)
         }
     }
 }
+
+void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
+{
+    // On initialise histo à 0 en parcourant toutes ses cases
+
+    // Pour chaque élément de tab, on calcul un index dans le tableau histo en soustrayant min
+        // Cela permet de faire commencer les valeurs d'histo à l'indice 0
+
+        // On vérifie si l'index calculer est valide, cad si il appartient au tableau
+            // Si c'est le cas, on incrémente la valeurs de 1 à cette index du tableau
+}
