@@ -3,7 +3,7 @@
 \author Charrier Simon
 \version 1
 \date november 14 2023
-\brief Some functions useful for all tps
+\brief Fonctions utiles pour les TP
 */
 
 // Importations
@@ -15,14 +15,14 @@
 // Définitions
 #define ERREUR -1
 
-// Displaying a table
+// Affichage d'un tableau
 void afftab(int *tint_tab,int int_taille)
 {
-	// Variables declaration
-    // Loop counter
+	// Déclaration des variable
+    // Compteur de boucle
 	int int_i;
 
-	// Displaying
+	// Affichage
 	printf("|");
 	for (int_i = 0 ; int_i < int_taille; int_i++)
 	{
@@ -31,11 +31,11 @@ void afftab(int *tint_tab,int int_taille)
     printf("\n");
 }
 
-// Requesting an integer array from user
+// Demande d'un tableau d'entier à l'utilisateur
 int* eTab(int int_taille)
 {
-    // Variables statement
-    // Verification
+    // Déclaration des variables
+    // Vérification
     int int_verif;
     // Compteur de boucle
     int int_i;
@@ -44,6 +44,11 @@ int* eTab(int int_taille)
 
     // Allocation du tableau
     pint_tab = malloc(int_taille * sizeof(int));
+    if (pint_tab == NULL)
+    {
+        fprintf(stderr, "Erreur d'allocation.\n");
+        exit(ERREUR);
+    }
 
     // Boucle pour permettant de demander chaque entier dans le tableau
     for (int_i = 0 ; int_i <= int_taille-1 ; int_i++)
