@@ -26,7 +26,7 @@ EXE := charriersi-tp$(NUM_TP).out
 CHE_EXE := $(REP_EXE)/$(EXE)
 
 #Liste des extensions de fichiers à supprimer avec clean dans le répertoire source
-SUPPR := *~ .old .bak \#*\# *.d
+SUPPR := *~ .out .old .bak \#*\#
 
 #Doxyfile
 DOXYFILE := Doxyfile
