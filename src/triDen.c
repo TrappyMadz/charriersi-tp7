@@ -41,12 +41,30 @@ void minMaxTableau (int* tab, int taille, int* min, int* max)
 
 void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
 {
-    // On initialise histo à 0 en parcourant toutes ses cases
+    // Définition des variables
+    // Compteur de boucle
+    int int_i;
+    // Numéro d'index du tableau histo
+    int int_index;
 
-    // Pour chaque élément de tab, on calcul un index dans le tableau histo en soustrayant min
+    // On initialise histo à 0 en parcourant toutes ses cases
+    for (int_i = 0 ; int_i < tailleH ; int_i++)
+    {
+        histo[int_i] = 0;
+    }
+
+
+    for (int_i = 0 ; int_i < taille ; int_i++)
+    {
+        // Pour chaque élément de tab, on calcul un index dans le tableau histo en soustrayant min
         // Cela permet de faire commencer les valeurs d'histo à l'indice 0
+        int_index = tab[int_i] - min;
 
         // On vérifie si l'index calculer est valide, cad si il appartient au tableau
+        if (int_index >= 0 && int_index < tailleH)
+        {
             // Si c'est le cas, on incrémente la valeurs de 1 à cette index du tableau
-            
+            histo[int_index]++;
+        }
+    }
 }

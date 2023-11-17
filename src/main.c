@@ -31,16 +31,14 @@
 int main(int argc, char ** argv) 
 {
 	int* pint_tab;
-    int min;
-    int max;
+    int histo[9];
 
     pint_tab=eTab(4);
     afftab(pint_tab, 4);
 
-    minMaxTableau(pint_tab, 4, &min, &max);
+    histogramme(pint_tab, 4, histo, 9, 1);
 
-    printf("Min : %d et Max : %d\n", min, max);
-
+    afftab(histo, 9);
     
     free(pint_tab);
 	return (0);
