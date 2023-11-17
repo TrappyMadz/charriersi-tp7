@@ -30,7 +30,7 @@ int* copierSousTableau(int* src, int debut,int fin)
     int_taille = fin - debut +1;
 
     // On alloue la mémoire necéssaire et on verifie si l'allocation s'est bien passée
-    dest = malloc(int_taille * sizeof(int));
+    dest = (int*)malloc(int_taille * sizeof(int));
     if (dest == NULL)
     {
         fprintf(stderr, "Erreur d'allocation\n");
@@ -103,7 +103,7 @@ void triFusion(int* tab, int taille)
 
         // On alloue l'espace nécessaire au 2 tableaux
         // Le sous tableau 1 sera composé des éléments de 0 à milieu
-        pint_sousTableau1 = malloc(int_milieu * sizeof(int));
+        pint_sousTableau1 = (int*)malloc(int_milieu * sizeof(int));
         if (pint_sousTableau1 == NULL)
         {
             fprintf(stderr,"Erreur d'allocation\n");
@@ -111,7 +111,7 @@ void triFusion(int* tab, int taille)
         }
 
         // Le sous tableau 2 aura le reste des éléments
-        pint_sousTableau2 = malloc((taille - int_milieu) * sizeof(int));
+        pint_sousTableau2 = (int*)malloc((taille - int_milieu) * sizeof(int));
         if (pint_sousTableau2 == NULL)
         {
             free(pint_sousTableau1);

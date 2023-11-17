@@ -43,7 +43,7 @@ int* eTab(int int_taille)
     int* pint_tab;
 
     // Allocation du tableau
-    pint_tab = malloc(int_taille * sizeof(int));
+    pint_tab = (int*)malloc(int_taille * sizeof(int));
     if (pint_tab == NULL)
     {
         fprintf(stderr, "Erreur d'allocation.\n");

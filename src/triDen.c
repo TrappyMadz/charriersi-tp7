@@ -68,3 +68,42 @@ void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
         }
     }
 }
+
+/*
+void triDenombrement(int* tab, int taille)
+{
+    // Déclaration des variables
+    // Min et Max du tableau
+    int int_min;
+    int int_max;
+    // histogramme et sa taille
+    int* pint_histo;
+    int int_tailleH;
+    // Compteur de boucle
+    int int_i;
+
+    // On recherche les valeurs min et max
+    minMaxTableau(tab, taille, int_min, int_max);
+
+    // On créer historigramme de la bonne taille (max-min+1)
+    int_tailleH = int_max - int_min + 1;
+    pint_histo = (int*) malloc(int_tailleH * sizeof(int));
+    if (pint_histo == NULL)
+    {
+        fprintf(stderr, "Erreur d'allocation\n");
+        exit(ERREUR);
+    }
+
+    // On appel la fonction histogramme qui initialisera le tableau et remplira ce dernier
+    histogramme(tab, taille, pint_histo, int_tailleH, int_min);
+
+    // à l'aide du tableau histogramme, on reconstruit dans l'ordre le tableau initial
+    for (int_i = 0 ; int_i < int_tailleH ; int_i++)
+    {
+        
+    }
+
+    // On libère l'adresse du tableau histo
+    free(pint_histo);
+}
+*/
