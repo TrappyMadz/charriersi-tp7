@@ -1,3 +1,11 @@
+/*!
+\file triDen.c
+\author Charrier Simon
+\version 1
+\date 17 novembre 2023
+\brief Fonctions servant à trier par dénombrement
+*/
+
 // Inclusions
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,6 +16,7 @@
 // Définitions
 #define ERREUR -1
 
+// Trouver le min et le max d'un tableau
 void minMaxTableau (int* tab, int taille, int* min, int* max)
 {
     // Déclaration des variables
@@ -40,6 +49,7 @@ void minMaxTableau (int* tab, int taille, int* min, int* max)
     }
 }
 
+// Produire un tableau contenant les occurence de chaque entier dans un tableau
 void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
 {
     // Définition des variables
@@ -70,7 +80,7 @@ void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
     }
 }
 
-
+// Tri par dénombrement d'un tableau d'entiers
 void triDenombrement(int* tab, int taille)
 {
     // Déclaration des variables

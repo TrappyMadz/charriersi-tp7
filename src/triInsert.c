@@ -2,13 +2,14 @@
 \file triInsert.c
 \author Charrier Simon
 \version 1
-\date 14 novembre 2023
-\brief Différentes fonctions de tris
+\date 17 novembre 2023
+\brief Tri par insertion
 */
 
 // Inclusions
 #include "triInsert.h"
 
+// Tri par insertion
 void triInsert (int* pint_tab, int int_taille)
 {
     // Déclaration des variables

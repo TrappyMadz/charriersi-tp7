@@ -1,3 +1,11 @@
+/*!
+\file triFus.c
+\author Charrier Simon
+\version 1
+\date 17 novembre 2023
+\brief Fonctions permettant de trier un tableau par fusion
+*/
+
 // Inclusions
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +16,6 @@
 #define ERREUR -1
 
 // Copie d'un tableau dans un autre
-
 int* copierSousTableau(int* src, int debut,int fin)
 {
     // Définition des variables
@@ -47,6 +54,7 @@ int* copierSousTableau(int* src, int debut,int fin)
     return dest;
 }
 
+// Fusion de 2 tableaux trié
 void fusion (int* tab1, int taille1, int* tab2, int taille2, int* tabRes)
 {
     // Déclaration des variables
@@ -86,6 +94,7 @@ void fusion (int* tab1, int taille1, int* tab2, int taille2, int* tabRes)
     }
 }
 
+// Tri par fusion
 void triFusion(int* tab, int taille)
 {
     // Déclaration des variables
@@ -135,4 +144,3 @@ void triFusion(int* tab, int taille)
         free(pint_sousTableau2);
     }
 }
-

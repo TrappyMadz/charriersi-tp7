@@ -2,7 +2,7 @@
 \file utiles.c
 \author Charrier Simon
 \version 1
-\date november 14 2023
+\date 17 novembre 2023
 \brief Fonctions utiles pour les TP
 */
 
@@ -16,7 +16,7 @@
 #define ERREUR -1
 
 // Affichage d'un tableau
-void afftab(int *tint_tab,int int_taille)
+void afftab(int* tint_tab, int int_taille)
 {
 	// Déclaration des variable
     // Compteur de boucle
