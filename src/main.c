@@ -31,13 +31,13 @@
 int main(int argc, char ** argv) 
 {
 	int* pint_tab;
-    int* min;
-    int* max;
+
 
     pint_tab=eTab(4);
     afftab(pint_tab, 4);
 
-    minMaxTableau(pint_tab, 4, min, max);
+    triDenombrement(pint_tab, 4);
+    
     
     free(pint_tab);
 	return (0);

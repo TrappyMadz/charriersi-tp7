@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-# include "triDen.h"
+#include "triDen.h"
+#include "utiles.h"
 
 // Définitions
 #define ERREUR -1
@@ -69,7 +70,7 @@ void histogramme (int* tab, int taille, int* histo, int tailleH, int min)
     }
 }
 
-/*
+
 void triDenombrement(int* tab, int taille)
 {
     // Déclaration des variables
@@ -79,11 +80,20 @@ void triDenombrement(int* tab, int taille)
     // histogramme et sa taille
     int* pint_histo;
     int int_tailleH;
+    // Index de l'histogramme
+    int int_index;
     // Compteur de boucle
     int int_i;
 
     // On recherche les valeurs min et max
-    minMaxTableau(tab, taille, int_min, int_max);
+    minMaxTableau(tab, taille, &int_min, &int_max);
+
+    // L'algorithme ne fonctionne que si tous les nombres sont des entiers > 0
+    if (int_min < 0)
+    {
+        fprintf(stderr, "Le tableau contien des nombres négatifs !\n");
+        exit(ERREUR);
+    }
 
     // On créer historigramme de la bonne taille (max-min+1)
     int_tailleH = int_max - int_min + 1;
@@ -98,12 +108,28 @@ void triDenombrement(int* tab, int taille)
     histogramme(tab, taille, pint_histo, int_tailleH, int_min);
 
     // à l'aide du tableau histogramme, on reconstruit dans l'ordre le tableau initial
-    for (int_i = 0 ; int_i < int_tailleH ; int_i++)
+    // On initialise index à 0
+    int_index = 0;
+    // On parcours tous les éléments de l'histogramme (i est la valeur actuelle dans l'histogramme)
+    for(int_i = 0 ; int_i < int_tailleH ; int_i++)
     {
-        
+        // On continue tant que la fréquence d'apparition de "i+min" > 0
+        while (pint_histo[int_i] > 0)
+        {
+            // On assigne la valeurs i+min à la position de l'index dans la tableau initial
+            tab[int_index] = int_i+int_min;
+
+            // On incrémente index pour se déplacer vers la position suivante
+            int_index++;
+
+            // On décrémente la fréquence d'apparition de la valeurs i+min de l'histogramme, car nous avons placer cette occurence dans le tableau.
+            pint_histo[int_i]--;
+        }
     }
 
     // On libère l'adresse du tableau histo
     free(pint_histo);
+
+    // On affiche le résultat
+    afftab(tab, taille);
 }
-*/
